@@ -13,7 +13,9 @@
         <link href="/public/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
         <?php
+        /*This is where if there is any additional css that the controller wants to load with go*/
         if (!empty($viewbag['page_css']) && is_array($viewbag['page_css'])) {
+            /*if the css array exists then loop through each item and print out the html link*/
             foreach ($viewbag['page_css'] as $css) {
                 echo "<link href='$css' rel='stylesheet' type='text/css'>";
             }
@@ -40,12 +42,17 @@
             </div>
         </nav>
 
-        <?php require "$_SERVER[DOCUMENT_ROOT]$viewbag[page_path]"; ?>
+        <?php 
+        /*here is where we print the view. Right after the navigation bar*/ 
+        require "$_SERVER[DOCUMENT_ROOT]$viewbag[page_path]"; 
+        ?>
 
         <script src="/public/vendors/jquery/jquery.min.js" type="text/javascript"></script>
         <script src="/public/vendors/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <?php
+        /*This is where if there is any additional javascript that the controller wants to load with go*/
         if (!empty($viewbag) && !empty($viewbag['page_scripts']) && is_array($viewbag['page_scripts'])) {
+            /*if the css array exists then loop through each item and print out the javascript script*/
             foreach ($viewbag['page_scripts'] as $script) {
                 echo "<script src='$script'></script>";
             }

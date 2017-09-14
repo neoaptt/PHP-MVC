@@ -1,5 +1,4 @@
 <?php
-
 /**
  * when writing an action you have a few things you can pass to the view to control it.
  * $_REQUEST variables are untouched, so you can use them like regular.
@@ -28,7 +27,6 @@
  * are the first ones to get loaded.
  */
 class home {
-
     public function index() {
         $index = new \home\index();
         $r = $index->getDBstuff();
@@ -38,5 +36,4 @@ class home {
     }
     public function test() {
     }
-
 }
